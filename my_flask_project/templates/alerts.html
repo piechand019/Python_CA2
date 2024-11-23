@@ -8,11 +8,18 @@
     <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
 </head>
 <body>
-    <h1>Alerts</h1>
-    <ul>
-        {% for alert in alerts %}
-            <li>{{ alert }}</li>
-        {% endfor %}
-    </ul>
+    <div class="navbar">
+        <a href="{{ url_for('display_logs') }}">Logs</a>
+        <a href="{{ url_for('display_alerts') }}">Alerts</a>
+        <a href="{{ url_for('logout') }}">Logout</a>
+    </div>
+    <div class="container">
+        <h1>Alerts</h1>
+        <ul>
+            {% for alert in alerts %}
+                <li>{{ alert }}</li>
+            {% endfor %}
+        </ul>
+    </div>
 </body>
 </html>
